@@ -1,0 +1,232 @@
+html {
+  font-size: 16px;
+  font-family: system-ui, sans-serif;
+  line-height: 1.5;
+}
+
+.index {
+  margin: 0;
+  padding: 0;
+  font-family: 'Segoe UI', Arial, sans-serif;
+  background-color: #f5f7fa;
+  color: #333;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  background-image: url(white1.jpg);
+  background-repeat: no-repeat;
+}
+
+h1 {
+  color: #004aad;
+  font-size: 2.8rem;
+  text-align: center;
+  margin-top: 40px;
+  margin-bottom: 30px;
+  text-shadow: 1px 1px 3px rgba(255, 255, 255, 0.8);
+}
+
+#imieNazw {
+  color: #004aad;
+  font-size: 2.8rem;
+  text-align: center;
+  margin-top: 40px;
+  margin-bottom: -100px;
+  text-shadow: 1px 1px 3px rgba(255, 255, 255, 0.8);
+}
+
+nav {
+  width: fit-content;
+
+  padding: 15px 40px;
+  background: rgba(255, 255, 255, 0.9);
+  border-radius: 15px;
+  margin: 150px auto;
+  width: 40%;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+nav:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 15px rgba(0, 0, 0, 0.2);
+}
+
+nav ul {
+  list-style: none;
+  margin: 0;
+  padding: 15px 0;
+  display: flex;
+  justify-content: center;
+  gap: 60px;
+}
+
+nav a {
+  color: black;
+  text-decoration: none;
+  font-size: 1.4rem;
+  font-weight: 500;
+  transition: color 0.3s ease;
+}
+
+nav a:hover {
+  color: rgb(245, 169, 94);
+}
+
+#konkurs:hover::after,
+#login:hover::after,
+#uwagi:hover::after {
+  content: '  👈';
+}
+
+h1 {
+  color: #1e88e5;
+  font-size: 2.5rem;
+  text-align: center;
+  margin-top: 60px;
+}
+
+#photo {
+  display: block;
+  margin: 30px auto;
+  max-width: 400px;
+  width: 80%;
+  border-radius: 15px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+}
+
+.index a[href='..'] {
+  display: block;
+  width: fit-content;
+  text-align: center;
+  margin: 20px auto;
+  padding: 12px 30px;
+  background-color: rgb(245, 169, 94);
+  border-radius: 10px;
+  color: white;
+  text-decoration: none;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+  text-align: center;
+}
+
+.index a[href='..']:hover {
+  background-color: rgb(255, 150, 50);
+  transform: translateY(-2px);
+  text-align: center;
+}
+
+#main {
+  text-align: center;
+  padding-top: 80px;
+  flex-grow: 1;
+}
+
+footer {
+  text-align: center;
+  padding: 15px 0 20px 0;
+  color: #555;
+  font-size: 0.9rem;
+}
+
+.loginBody {
+  background-image: url(white2.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
+  padding-top: 100px;
+  min-height: 100vh;
+}
+
+.loginBox {
+  display: inline-block;
+  background-color: white;
+  padding: 55px 60px;
+  border-radius: 15px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+#submit {
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  width: 80%;
+  height: auto;
+}
+
+#submit:hover {
+  transform: translateY(-0.7px);
+  box-shadow: 0 8px 15px rgba(0, 0, 0, 0.2);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  background-color: rgb(245, 169, 94);
+  color: white;
+}
+
+body.uwagi {
+  background-image: url(white1.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
+  font-family: system-ui, sans-serif;
+  color: #333;
+  margin: 0;
+  padding: 0;
+  line-height: 1.6;
+}
+
+body.uwagi header {
+  text-align: center;
+  margin-top: 60px;
+  margin-bottom: 30px;
+  background: rgba(255, 255, 255, 0.9);
+  padding: 2rem 1rem;
+  border-radius: 15px;
+  width: 70%;
+  margin-left: auto;
+  margin-right: auto;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+body.uwagi header h1 {
+  color: #004aad;
+  font-size: 2.4rem;
+  margin-bottom: 1rem;
+  text-shadow: 1px 1px 3px rgba(255, 255, 255, 0.8);
+}
+
+body.uwagi header p {
+  color: #555;
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+body.uwagi main {
+  width: 70%;
+  margin: 40px auto;
+  background-color: rgba(255, 255, 255, 0.95);
+  border-radius: 15px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  padding: 2rem 2.5rem;
+}
+
+body.uwagi article {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+body.uwagi section h2 {
+  color: #1e88e5;
+  font-size: 1.6rem;
+  margin-bottom: 0.8rem;
+}
+
+body.uwagi section p {
+  color: #444;
+  margin-bottom: 0.8rem;
+}
+
+body.uwagi ul {
+  list-style: disc;
+  margin-left: 1.5rem;
+}
+
+body.uwagi li {
+  margin-bottom: 0.4rem;
+}

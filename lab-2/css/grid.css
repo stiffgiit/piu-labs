@@ -1,0 +1,198 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  body {
+    font-family: Arial, sans-serif;
+    background: #efefef;
+    line-height: 1.5;
+  }
+  
+  main h1, main h2, main h3, main p,
+  aside h1, aside h2, aside h3, aside p {
+    margin-bottom: 1rem;
+    line-height: 1.5;
+  }
+  
+  .container {
+    width: 100%;
+    padding: 0 1rem;
+    max-width: 1200px;
+    margin: 0 auto;
+    background: white;
+  }
+  
+  .container > header {
+    background: #f5a623;
+    padding: 0.6rem 0.8rem;
+    display: flex;
+    align-items: center;
+    gap: 0.6rem;
+  }
+  
+  .container > header .logo {
+    background: white;
+    padding: 0.25rem 0.5rem;
+    border-radius: 4px;
+    font-weight: 700;
+  }
+  
+  .container > header h1 {
+    font-size: 1.25rem;
+    font-weight: 700;
+    color: #fff;
+  }
+  
+  .container > nav {
+    background: #2b7bbf;
+    display: flex;
+    justify-content: center;
+    gap: 1px;
+    overflow-x: auto;
+    white-space: nowrap;
+  }
+  
+  .container > nav a {
+    color: white;
+    text-decoration: none;
+    font-weight: 600;
+    margin-right: 1rem;
+    padding: 0.2rem 0.4rem;
+    display: inline-block;
+  }
+  
+  .container > main {
+    padding: 1rem 0.5rem;
+    background: white;
+  }
+  
+  .container > aside {
+    background: #dff0e0;
+    padding: 1rem;
+    margin-top: 1rem;
+  }
+  
+  .container > aside > div {
+    text-align: center;
+  }
+
+  .container > aside div span {
+    font-size: 3.2rem;
+    margin: 0.3rem;
+    display: inline-block;
+  }
+  
+  .container > footer {
+    background: #2aa867;
+    color: white;
+    text-align: center;
+    padding: 0.7rem;
+    margin-top: 1rem;
+    font-weight: 600;
+    grid-column: 1 / -1;
+    grid-row: 4;
+    margin-top: 0;
+  }
+  
+  @media (min-width: 1024px) {
+  
+    .container {
+      padding: 0;
+    }
+  
+    .container {
+      display: grid;
+      grid-template-columns: 1fr;
+    }
+  
+    .container > header,
+    .container > nav {
+      grid-column: 1 / -1;
+    }
+    
+    .container > nav {
+        display: flex;
+        justify-content: flex-start;
+        gap: 1.5rem;
+        overflow-x: visible;
+        white-space: normal;
+        padding: 0.6rem 1rem;
+      }
+
+    .container > main,
+    .container > aside {
+      grid-row: 3;
+    }
+  
+    .container {
+      grid-template-columns: 1fr 300px;
+    }
+  
+    .container > main {
+      padding: 1.2rem;
+    }
+  
+    .container > aside {
+      margin-top: 0;
+      margin-bottom: 0;
+      align-self: stretch;
+    }
+
+    .container > aside > div {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 1.4rem 0.05rem;
+        justify-items: center;
+        align-items: center;
+        padding: 0.5rem 0;
+      }
+      
+      .container > aside > div > span {
+        display: inline-block;
+        line-height: 1;
+      }
+      
+      .container > aside > div > span:nth-of-type(1) { grid-column: 1; grid-row: 1; }
+      .container > aside > div > span:nth-of-type(2) { grid-column: 2; grid-row: 1; }
+      .container > aside > div > span:nth-of-type(3) { grid-column: 1; grid-row: 2; }
+      .container > aside > div > span:nth-of-type(4) { grid-column: 2; grid-row: 2; }
+      .container > aside > div > span:nth-of-type(5) { grid-column: 1; grid-row: 3; }
+      .container > aside > div > span:nth-of-type(6) { grid-column: 2; grid-row: 3; }
+      .container > aside > div > span:nth-of-type(7) { grid-column: 1; grid-row: 4; }
+      .container > aside > div > span:nth-of-type(8) { grid-column: 2; grid-row: 4; }
+      
+      .container > aside > div > span:nth-of-type(1),
+      .container > aside > div > span:nth-of-type(3),
+      .container > aside > div > span:nth-of-type(5),
+      .container > aside > div > span:nth-of-type(7) {
+        font-size: 4rem;
+      }
+      
+      .container > aside > div > span:nth-of-type(2),
+      .container > aside > div > span:nth-of-type(4),
+      .container > aside > div > span:nth-of-type(6),
+      .container > aside > div > span:nth-of-type(8) {
+        font-size: 4rem;
+      }
+  
+    .container > footer {
+      grid-column: 1 / -1;
+      grid-row: 4;
+      margin-top: 0;
+    }
+  
+    .container > nav {
+      overflow-x: visible;
+      white-space: normal;
+      padding: 0.6rem 1rem;
+    }
+  
+    .container > nav a {
+      margin-right: 1.5rem;
+      font-size: 1rem;
+      padding: 0.3rem 0.6rem;
+    }
+  }
+  

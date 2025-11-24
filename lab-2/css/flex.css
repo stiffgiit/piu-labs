@@ -1,0 +1,199 @@
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 1rem;
+}
+
+
+.theme-picker {
+  border: 2px solid #d88849;  
+  border-radius: 5px;
+  background-color: #f6f2dc;
+}
+
+.theme-picker legend {
+  font-weight: 700;
+}
+
+.theme-picker label {
+  margin-right: 20px;
+}
+
+.theme-picker input[type="radio"] {
+  margin-right: 10px;
+}
+
+.container {
+  margin-top: 20px;
+  padding: 1rem;
+  border-radius: 5px;
+  background: #f6f2dc;
+  border: 2px solid #d88849;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+
+.item {
+  border-radius: 5px;
+  color: white;
+  padding: 1rem;
+  flex-grow: 1;
+  flex-shrink: 1;
+  flex-basis: 30%;
+  justify-content: center;
+  text-align: center;
+  font-weight: bold;
+}
+
+@media (max-width: 1024px) {
+  .item {
+    flex-basis: 100%;
+  }
+}
+
+body:has(input[value="blue"]:checked) .container {
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 1rem 2rem;
+}
+
+body:has(input[value="blue"]:checked) .container .item {
+  background-color: blue;
+  flex-basis: 30%;
+  flex-grow: 0;
+  flex-shrink: 0;
+}
+
+@media (max-width: 1024px) {
+  body:has(input[value="blue"]:checked) .container {
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
+  }
+
+  body:has(input[value="blue"]:checked) .container .item {
+    flex-basis: 100%;
+    width: 90%;
+    margin-right: 0;
+  }
+}
+
+body:has(input[value="red"]:checked) .container .item,
+body:has(input[value="red"]:checked) .item {
+  background-color: red;
+  flex-basis: auto;
+  display: flex;
+  flex-direction: column;   
+  justify-content: center;
+  align-items: center;
+}
+
+body:has(input[value="red"]:checked) .container .item:nth-of-type(1) { order: 3; }
+body:has(input[value="red"]:checked) .container .item:nth-of-type(2) { order: 1; }
+body:has(input[value="red"]:checked) .container .item:nth-of-type(3) { order: 2; }
+body:has(input[value="red"]:checked) .container .item:nth-of-type(4) { order: 4; }
+body:has(input[value="red"]:checked) .container .item:nth-of-type(5) { order: 5; }
+
+body:has(input[value="red"]:checked) .container .item:nth-of-type(1) {
+  order: 3;
+  flex-grow: 2;
+  min-width: 260px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+body:has(input[value="red"]:checked) .container .item:nth-of-type(1)::after {
+  content: '\A(Jestem większy i na środku!)';
+  white-space: pre;
+  display: block;
+  font-size: 80%;
+  font-weight: normal;
+  margin-top: 0rem;
+}
+
+@media (max-width: 1024px) {
+  body:has(input[value="red"]:checked) .container .item {
+    flex-basis: 45%;
+  }
+
+  body:has(input[value="red"]:checked) .container .item:nth-of-type(1) {
+    flex-basis: 100%;
+  }
+}
+
+body:has(input[value="green"]:checked) .container .item,
+body:has(input[value="green"]:checked) .item {
+  background-color: green;
+  flex-basis: 0;
+}
+
+body:has(input[value="green"]:checked) .container .item:nth-of-type(1) { flex-grow: 5; }
+body:has(input[value="green"]:checked) .container .item:nth-of-type(2) { flex-grow: 4; }
+body:has(input[value="green"]:checked) .container .item:nth-of-type(3) { flex-grow: 3; }
+body:has(input[value="green"]:checked) .container .item:nth-of-type(4) { flex-grow: 2; }
+body:has(input[value="green"]:checked) .container .item:nth-of-type(5) { flex-grow: 1; }
+
+@media (max-width: 1024px) {
+  body:has(input[value="green"]:checked) .container .item:nth-of-type(2) { width: 90%; }
+  body:has(input[value="green"]:checked) .container .item:nth-of-type(3) { width: 80%; }
+  body:has(input[value="green"]:checked) .container .item:nth-of-type(4) { width: 70%; }
+  body:has(input[value="green"]:checked) .container .item:nth-of-type(5) { width: 60%; }
+}
+
+body:has(input[value="green"]:checked) .container .item:nth-of-type(1) {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 1rem;
+  position: relative;
+}
+
+body:has(input[value="green"]:checked) .container .item:nth-of-type(1)::before {
+  content: '😀';
+  font-size: 2em;
+  line-height: 1.5;
+  vertical-align: middle;
+  margin-right: 0.5rem;
+  display: inline-block;
+}
+
+body:has(input[value="green"]:checked) .container .item:nth-of-type(1)::after {
+  content: '😀';
+  font-size: 2em;
+  line-height: 1.5;
+  vertical-align: middle;
+  margin-left: 0.5rem;
+  display: inline-block;
+}
+
+@media (max-width: 1024px) {
+  body:has(input[value="green"]:checked) .container {
+    flex-direction: column-reverse;
+    align-items: flex-end;
+  }
+
+  body:has(input[value="green"]:checked) .container .item:nth-of-type(5) { margin-left: 0; width: 60%; }
+  body:has(input[value="green"]:checked) .container .item:nth-of-type(4) { margin-left: 1rem; width: 70%; }
+  body:has(input[value="green"]:checked) .container .item:nth-of-type(3) { margin-left: 3rem; width: 80%; }
+  body:has(input[value="green"]:checked) .container .item:nth-of-type(2) { margin-left: 5rem; width: 90%; }
+  body:has(input[value="green"]:checked) .container .item:nth-of-type(1) { margin-left: 7rem; width: 100%; }
+}
+
+@media (max-width: 1024px) {
+  body:has(input[value="green"]:checked) .container .item:nth-of-type(5) { margin-left: 0; width: 55%; }
+  body:has(input[value="green"]:checked) .container .item:nth-of-type(4) { margin-left: 1rem; width: 65%; }
+  body:has(input[value="green"]:checked) .container .item:nth-of-type(3) { margin-left: 1.5rem; width: 75%; }
+  body:has(input[value="green"]:checked) .container .item:nth-of-type(2) { margin-left: 2rem; width: 85%; }
+  body:has(input[value="green"]:checked) .container .item:nth-of-type(1) { margin-left: 2.5rem; width: 95%; }
+}
+
+

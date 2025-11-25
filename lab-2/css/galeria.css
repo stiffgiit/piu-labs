@@ -1,0 +1,82 @@
+:root{
+    --gap: 1rem;
+    --radius: 12px;
+    --bg: #f5f6f8;
+    --card-bg: #fff;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+
+body{
+    margin:0;
+    padding:1rem;
+    background: url(forest.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    font-family: Arial, sans-serif;
+    color:#222;
+}
+
+.wrap{
+    max-width: 1200px;
+    margin:0 auto;
+}
+
+header{
+    margin-bottom:1rem;
+    color: white;
+}
+
+header h1{
+    margin:0;
+}
+
+.meta{
+    font-size:0.85rem;
+    color:#555;
+}
+
+.gallery{
+    display:grid;
+    grid-template-columns:1fr;
+    gap:var(--gap);
+}
+
+figure{
+    background:var(--card-bg);
+    margin:0;
+    border-radius:var(--radius);
+    overflow:hidden;
+    box-shadow:0 4px 14px rgba(0,0,0,0.1);
+    transition:0.3s;
+}
+
+figure:hover{
+    transform: translateY(-6px);
+    box-shadow:0 12px 26px rgba(0,0,0,0.18);
+}
+
+img{
+    width:100%;
+    display:block;
+    border-bottom:1px solid rgba(0,0,0,0.05);
+    transition:0.3s;
+}
+
+figure:hover img{
+    transform:scale(1.03);
+}
+
+figcaption{
+    padding:0.8rem;
+    font-size:0.95rem;
+}
+
+@media (min-width:1200px){
+    .gallery{
+        grid-template-columns:1fr 1fr;
+    }
+}

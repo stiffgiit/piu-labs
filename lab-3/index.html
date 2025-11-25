@@ -1,12 +1,61 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="pl">
-  <head>
-    <meta charset="UTF-8" />
-    <title>Lab 3</title>
-    <link rel="stylesheet" href="css/style.css" />
-  </head>
-  <body>
-    <h1>Lab 3</h1>
-    <a href="..">Powrót</a>
-  </body>
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Karta produktu - Polo</title>
+  <link rel="stylesheet" href="css/polo.css" />
+</head>
+<body>
+  <main class="page">
+    <article class="product-card" aria-labelledby="product-title">
+
+      <!-- RADIO CONTROLS (ukryte) -->
+      <input type="radio" name="color" id="c-blue" class="swatch" checked>
+      <input type="radio" name="color" id="c-red"  class="swatch">
+      <input type="radio" name="color" id="c-green" class="swatch">
+      <input type="radio" name="color" id="c-yellow" class="swatch">
+
+      <div class="card-inner">
+        <figure class="photo" role="img" aria-label="Koszulka Polo"></figure>
+
+        <section class="details">
+          <div class="title-wrap">
+            <h1 id="product-title" class="title">Koszulka Polo</h1>
+            <span class="promo">Promocja!</span>
+          </div>
+
+          <p class="desc">Lorem ipsum dolor sit amet consectetur adipisicing elit. Quibusdam quis adipisci maiores.</p>
+
+          <div class="meta">
+            <div class="meta-row">
+              <strong class="meta-label">Kolor</strong>
+              <div class="colors-legend" role="tablist" aria-label="Wybór koloru">
+                <label for="c-blue"  class="color-dot" title="niebieski"  aria-label="niebieski"></label>
+                <label for="c-red"   class="color-dot" title="czerwony"  aria-label="czerwony"></label>
+                <label for="c-green" class="color-dot" title="zielony"   aria-label="zielony"></label>
+                <label for="c-yellow"class="color-dot" title="żółty"     aria-label="żółty"></label>
+              </div>
+            </div>
+
+            <div class="meta-row">
+              <strong class="meta-label">Rozmiar</strong>
+              <div class="sizes" role="tablist" aria-label="Wybór rozmiaru">
+                <button class="size" type="button">S</button>
+                <button class="size active" type="button">M</button>
+                <button class="size" type="button">L</button>
+                <button class="size" type="button">XL</button>
+              </div>
+            </div>
+          </div>
+
+          <div class="price-add">
+            <div class="price">59,99 zł</div>
+            <button class="add" type="button">🛒 Do koszyka</button>
+          </div>
+        </section>
+      </div>
+    </article>
+  </main>
+</body>
 </html>

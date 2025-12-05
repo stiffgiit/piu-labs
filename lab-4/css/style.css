@@ -1,19 +1,236 @@
-/* Minimalny reset  */
+:root{
+  --bg: #f4f5f7;
+  --card-bg: #ffffff;
+  --accent: #2b7fc7;
+  --muted: #6e6e6e;
+  --radius: 8px;
+  --shadow: 0 6px 20px rgba(0,0,0,0.08);
+  --col-gap: 16px;
+  --col-width-desktop: 320px;
+}
+
+/* Minimalny reset */
 html {
-  font-size: 16px; /* bazowy rozmiar czcionki */
-  font-family: system-ui, sans-serif; /* font systemowy */
-  line-height: 1.5; /* lepsza czytelność */
+  font-size: 16px;
+  font-family: system-ui, sans-serif;
+  line-height: 1.5;
 }
 body {
   margin: 1rem;
   padding: 0;
+  background: var(--bg);
+  color: #111;
+  -webkit-font-smoothing:antialiased;
+  -moz-osx-font-smoothing:grayscale;
 }
 
 a {
-  color: #0066cc; /* niebieski kolor linków */
-  text-decoration: none; /* bez podkreślenia */
+  color: #0066cc;
+  text-decoration: none;
   font-size: 1.4rem;
 }
 a:hover {
-  text-decoration: underline; /* podkreślenie przy najechaniu */
+  text-decoration: underline;
+}
+
+.container{
+  max-width:1200px;
+  margin:0 auto;
+}
+
+h1{
+  margin:0 0 18px 0;
+  font-size:1.6rem;
+  text-align:center;
+}
+
+
+.board{
+  display:flex;
+  flex-direction:column;
+  gap:var(--col-gap);
+  align-items:center;
+  justify-content:flex-start;
+  flex-wrap:nowrap;
+}
+
+.column{
+  width:96%;
+  max-width:720px;
+  background:var(--card-bg);
+  border-radius:10px;
+  padding:10px;
+  box-shadow:var(--shadow);
+  display:flex;
+  flex-direction:column;
+  min-height:120px;
+  box-sizing:border-box;
+}
+
+.col-header{
+  
+  flex-direction:column;
+  gap:8px;
+  align-items:stretch;
+  margin-bottom:8px;
+}
+
+.col-title{
+  margin:0;
+  font-size:1.05rem;
+  text-align:center;
+}
+
+.col-controls{
+  display:flex;
+  gap:8px;
+  justify-content:space-between;
+  align-items:center;
+  flex-wrap:wrap;
+}
+
+.counter{
+  font-weight:700;
+  padding:4px 8px;
+  border-radius:999px;
+  background:#ececec;
+  border:1px solid #ddd;
+  font-size:0.85rem;
+}
+
+.btn{
+  padding:10px 12px;
+  border-radius:8px;
+  border:1px solid #ccc;
+  background:#fff;
+  cursor:pointer;
+  transition: transform .15s ease, box-shadow .15s ease;
+  font-size:1rem;
+}
+.btn:hover{
+  transform: translateY(-2px);
+  box-shadow: 0 6px 12px rgba(0,0,0,0.06);
+}
+
+.col-list{
+  display:flex;
+  flex-direction:column;
+  gap:10px;
+  min-height:40px;
+}
+.col-list:empty::after{
+  content:"Brak kart";
+  text-align:center;
+  color:var(--muted);
+  padding:8px 0;
+}
+
+
+.card{
+  background:var(--card-bg);
+  
+  padding:10px;
+  border:2px solid rgba(0,0,0,0.05);
+  box-shadow:0 6px 18px rgba(0,0,0,0.06);
+  display:flex;
+  flex-direction:column;
+  gap:8px;
+  box-sizing:border-box;
+}
+
+.card-controls{
+  display:flex;
+  justify-content:flex-end;
+  gap:8px;
+  flex-wrap:wrap;
+}
+
+.card .btn{
+  padding:6px 8px;
+  border-radius:6px;
+  font-size:0.95rem;
+}
+
+.card-body{
+  min-height:44px;
+  padding:8px;
+  border-radius:6px;
+  outline:none;
+  font-size:1rem;
+  background:transparent;
+}
+.card-body:focus{
+  box-shadow:0 0 0 3px rgba(43,127,199,0.12);
+}
+
+.card, .column, .btn { transition: all .18s ease; }
+
+footer {
+    margin-top: 40px;
+    padding-bottom: 40px;
+    text-align: center;
+  }
+
+
+  footer a {
+    color: #0066cc;
+    
+  }
+
+
+@media (min-width: 721px){
+  .board{
+    flex-direction:row;
+    gap:var(--col-gap);
+    justify-content:center;
+    align-items:flex-start;
+    flex-wrap:nowrap; 
+  }
+
+  .column{
+    width: min(var(--col-width-desktop), calc((100% - (var(--col-gap) * 2)) / 3));
+    max-width: none;
+    padding:12px;
+    border-radius:var(--radius);
+    margin: 0; 
+    box-sizing: border-box;
+  }
+
+  .col-header{
+    flex-direction:row;
+    align-items:center;
+    gap:8px;
+  }
+
+  .col-controls{
+    justify-content:flex-start;
+    gap:6px;
+    flex-wrap:nowrap;
+  }
+
+  .col-title{
+    font-size:1.1rem;
+    text-align:center;
+  }
+
+  .btn{
+    padding:6px 8px;
+    font-size:0.85rem;
+    border-radius:6px;
+  }
+
+  .card{
+    padding:8px;
+    gap:6px;
+  }
+
+  .card-controls{
+    gap:6px;
+  }
+
+  .card-body{
+    min-height:36px;
+    padding:6px;
+    font-size:0.95rem;
+  }
 }
